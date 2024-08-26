@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -12,13 +9,49 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Cek',
+            'Layout Widget - Stack',
             style: TextStyle(color: Colors.white),
           ),
         ),
         backgroundColor: Colors.blue,
       ),
-      body: const Center(),
+      body: Container(
+        width: 300,
+        height: 300,
+        color: Colors.yellow.shade100,
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Container(
+              color: Colors.grey.withOpacity(0.3),
+              child: Container(
+                margin: const EdgeInsets.all(0),
+                width: 100,
+                height: 100,
+                color: Colors.red,
+              ),
+            ),
+            Container(
+              color: Colors.grey.withOpacity(0.3),
+              child: Container(
+                margin: const EdgeInsets.all(20),
+                width: 100,
+                height: 100,
+                color: Colors.green,
+              ),
+            ),
+            Container(
+              color: Colors.grey.withOpacity(0.3),
+              child: Container(
+                margin: const EdgeInsets.all(40),
+                width: 100,
+                height: 100,
+                color: Colors.blue,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
