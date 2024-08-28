@@ -8,48 +8,34 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text(
-            'Layout Widget - Stack',
-            style: TextStyle(color: Colors.white),
-          ),
+          child: Text("Wrap Demo"),
         ),
         backgroundColor: Colors.blue,
       ),
       body: Container(
-        width: 300,
-        height: 300,
-        color: Colors.yellow.shade100,
-        child: Stack(
-          alignment: Alignment.topCenter,
-          children: [
-            Container(
-              color: Colors.grey.withOpacity(0.3),
-              child: Container(
-                margin: const EdgeInsets.all(0),
-                width: 100,
-                height: 100,
-                color: Colors.red,
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.grey.shade300,
+        child: Wrap(
+          direction: Axis.vertical,
+          spacing: 10,
+          // alignment: WrapAlignment.end,
+          runAlignment: WrapAlignment.end,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          verticalDirection: VerticalDirection.down,
+          runSpacing: 10,
+          children: List.generate(
+            9,
+            (index) => Container(
+              width: index % 2 == 0 ? 120 : 100,
+              height: index % 2 == 0 ? 120 : 100,
+              color: index % 2 == 0 ? Colors.red : Colors.blue,
+              child: Text(
+                index.toString(),
+                style: const TextStyle(fontSize: 25, color: Colors.white),
               ),
             ),
-            Container(
-              color: Colors.grey.withOpacity(0.3),
-              child: Container(
-                margin: const EdgeInsets.all(20),
-                width: 100,
-                height: 100,
-                color: Colors.green,
-              ),
-            ),
-            Container(
-              color: Colors.grey.withOpacity(0.3),
-              child: Container(
-                margin: const EdgeInsets.all(40),
-                width: 100,
-                height: 100,
-                color: Colors.blue,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -305,3 +291,54 @@ class MainPage extends StatelessWidget {
 //     );
 //   }
 // }
+
+
+// Widget Stack
+// return Scaffold(
+//       appBar: AppBar(
+//         title: const Center(
+//           child: Text(
+//             'Layout Widget - Stack',
+//             style: TextStyle(color: Colors.white),
+//           ),
+//         ),
+//         backgroundColor: Colors.blue,
+//       ),
+//       body: Container(
+//         width: 300,
+//         height: 300,
+//         color: Colors.yellow.shade100,
+//         child: Stack(
+//           alignment: Alignment.topCenter,
+//           children: [
+//             Container(
+//               color: Colors.grey.withOpacity(0.3),
+//               child: Container(
+//                 margin: const EdgeInsets.all(0),
+//                 width: 100,
+//                 height: 100,
+//                 color: Colors.red,
+//               ),
+//             ),
+//             Container(
+//               color: Colors.grey.withOpacity(0.3),
+//               child: Container(
+//                 margin: const EdgeInsets.all(20),
+//                 width: 100,
+//                 height: 100,
+//                 color: Colors.green,
+//               ),
+//             ),
+//             Container(
+//               color: Colors.grey.withOpacity(0.3),
+//               child: Container(
+//                 margin: const EdgeInsets.all(40),
+//                 width: 100,
+//                 height: 100,
+//                 color: Colors.blue,
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
