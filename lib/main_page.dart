@@ -8,35 +8,19 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text("Wrap Demo"),
+          child: Text(
+            "Padding Widget",
+            style: TextStyle(color: Colors.white),
+          ),
         ),
         backgroundColor: Colors.blue,
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.grey.shade300,
-        child: Wrap(
-          direction: Axis.vertical,
-          spacing: 10,
-          // alignment: WrapAlignment.end,
-          runAlignment: WrapAlignment.end,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          verticalDirection: VerticalDirection.down,
-          runSpacing: 10,
-          children: List.generate(
-            9,
-            (index) => Container(
-              width: index % 2 == 0 ? 120 : 100,
-              height: index % 2 == 0 ? 120 : 100,
-              color: index % 2 == 0 ? Colors.red : Colors.blue,
-              child: Text(
-                index.toString(),
-                style: const TextStyle(fontSize: 25, color: Colors.white),
-              ),
-            ),
-          ),
-        ),
+      body: Row(
+        children: [
+          Container(
+              // margin: const EdgeInsets.all(),
+              )
+        ],
       ),
     );
   }
@@ -339,6 +323,67 @@ class MainPage extends StatelessWidget {
 //               ),
 //             ),
 //           ],
+//         ),
+//       ),
+//     );
+
+// Wrap Layout
+// return Scaffold(
+//       appBar: AppBar(
+//         title: const Center(
+//           child: Text("Wrap Demo"),
+//         ),
+//         backgroundColor: Colors.blue,
+//       ),
+//       body: Container(
+//         width: double.infinity,
+//         height: double.infinity,
+//         color: Colors.grey.shade300,
+//         child: Wrap(
+//           direction: Axis.vertical,
+//           spacing: 10,
+//           // alignment: WrapAlignment.end,
+//           runAlignment: WrapAlignment.end,
+//           crossAxisAlignment: WrapCrossAlignment.center,
+//           verticalDirection: VerticalDirection.down,
+//           runSpacing: 10,
+//           children: List.generate(
+//             9,
+//             (index) => Container(
+//               width: index % 2 == 0 ? 120 : 100,
+//               height: index % 2 == 0 ? 120 : 100,
+//               color: index % 2 == 0 ? Colors.red : Colors.blue,
+//               child: Text(
+//                 index.toString(),
+//                 style: const TextStyle(fontSize: 25, color: Colors.white),
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+
+// Align
+// return Scaffold(
+//       appBar: AppBar(
+//         title: const Center(
+//           child: Text(
+//             "Align Widget",
+//             style: TextStyle(color: Colors.white),
+//           ),
+//         ),
+//         backgroundColor: Colors.blue,
+//       ),
+//       body: const Align(
+//         // alignment: Alignment.center,
+//         alignment: Alignment(-0.5, -0.7),
+//         child: SizedBox(
+//           width: 300,
+//           child: Text(
+//             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae mattis nulla.",
+//             textAlign: TextAlign.justify,
+//             style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+//           ),
 //         ),
 //       ),
 //     );
