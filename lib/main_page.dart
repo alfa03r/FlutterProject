@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  TextEditingController textEditingController = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
@@ -9,19 +17,13 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            "Padding Widget",
+            'Input Decoration',
             style: TextStyle(color: Colors.white),
           ),
         ),
         backgroundColor: Colors.blue,
       ),
-      body: Row(
-        children: [
-          Container(
-              // margin: const EdgeInsets.all(),
-              )
-        ],
-      ),
+      body: const Center(),
     );
   }
 }
@@ -384,6 +386,110 @@ class MainPage extends StatelessWidget {
 //             textAlign: TextAlign.justify,
 //             style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
 //           ),
+//         ),
+//       ),
+//     );
+
+
+// Padding
+// return Scaffold(
+//       appBar: AppBar(
+//         title: const Center(
+//           child: Text(
+//             "Padding Widget",
+//             style: TextStyle(color: Colors.white),
+//           ),
+//         ),
+//         backgroundColor: Colors.blue,
+//       ),
+//       body: const Row(
+//         children: [
+//           Padding (
+//             padding:  EdgeInsets.fromLTRB(20, 20, 10, 0),
+//             child:  Text('Lorem'),
+//           ),
+//           Padding(
+//             padding: EdgeInsets.fromLTRB(20, 20, 10, 0),
+//             child: Text('Ipsum'),
+//           ),
+//           Padding(
+//             padding: EdgeInsets.fromLTRB(20, 20, 10, 0),
+//             child: Text('Dolor'),
+//           ),
+//           Padding(
+//             padding: EdgeInsets.fromLTRB(20, 20, 10, 0),
+//             child: Text('It'),
+//           ),
+//           Padding(
+//             padding: EdgeInsets.fromLTRB(20, 20, 10, 0),
+//             child: Text('Amet'),
+//           ),
+//         ],
+//       ),
+//     );
+
+
+// icons dan material icon
+// return Scaffold(
+//       appBar: AppBar(
+//         backgroundColor: Colors.blue,
+//         title: const Center(
+//           child: Text(
+//             'Icon Widget',
+//             style: TextStyle(color: Colors.white),
+//           ),
+//         ),
+//       ),
+//       body: Center(
+//         child: Icon(
+//           MdiIcons.netflix,
+//           size: 200,
+//           color: Colors.red.shade900,
+//           // shadows: const [
+//           //   Shadow(offset: Offset(3, 3), blurRadius: 8, color: Colors.blue)
+//           // ],
+//         ),
+//       ),
+//     );
+
+// TextField
+// return Scaffold(
+//       appBar: AppBar(
+//         title: const Center(
+//           child: Text(
+//             'Text Field',
+//             style: TextStyle(color: Colors.white),
+//           ),
+//         ),
+//         backgroundColor: Colors.blue,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(20),
+//         child: Column(
+//           children: [
+//             TextField(
+//               controller: textEditingController,
+//               // obscureText: true,
+//               // obscuringCharacter: '*',
+//               style: const TextStyle(fontWeight: FontWeight.bold),
+//               textAlign: TextAlign.center,
+//               cursorColor: Colors.blue,
+//               inputFormatters: [
+//                 TextInputFormatter.withFunction(
+//                   (oldValue, newValue) =>
+//                       TextEditingValue(text: newValue.text.toUpperCase()),
+//                 )
+//               ],
+//               onChanged: (value) => setState(() {}),
+//             ),
+//             const SizedBox(
+//               height: 20,
+//             ),
+//             Text(
+//               textEditingController.text,
+//               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//             )
+//           ],
 //         ),
 //       ),
 //     );
