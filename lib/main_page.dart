@@ -17,16 +17,46 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Input Decoration',
+            'Text Field',
             style: TextStyle(color: Colors.white),
           ),
         ),
         backgroundColor: Colors.blue,
       ),
-      body: const Center(),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            TextField(
+              controller: textEditingController,
+              // obscureText: true,
+              // obscuringCharacter: '*',
+              style: const TextStyle(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+              cursorColor: Colors.blue,
+              inputFormatters: [
+                TextInputFormatter.withFunction(
+                  (oldValue, newValue) =>
+                      TextEditingValue(text: newValue.text.toUpperCase()),
+                )
+              ],
+              onChanged: (value) => setState(() {}),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              textEditingController.text,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
+
+
 
   
 
@@ -453,7 +483,19 @@ class _MainPageState extends State<MainPage> {
 //     );
 
 // TextField
-// return Scaffold(
+// class MainPage extends StatefulWidget {
+//   const MainPage({super.key});
+
+//   @override
+//   State<MainPage> createState() => _MainPageState();
+// }
+
+// class _MainPageState extends State<MainPage> {
+//   TextEditingController textEditingController = TextEditingController(text: '');
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
 //       appBar: AppBar(
 //         title: const Center(
 //           child: Text(
@@ -493,3 +535,5 @@ class _MainPageState extends State<MainPage> {
 //         ),
 //       ),
 //     );
+//   }
+// }
