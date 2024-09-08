@@ -32,7 +32,7 @@ class _MainPageState extends State<MainPage> {
               // obscureText: true,
               // obscuringCharacter: '*',
               style: const TextStyle(fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+              // textAlign: TextAlign.center,
               cursorColor: Colors.blue,
               inputFormatters: [
                 TextInputFormatter.withFunction(
@@ -41,10 +41,58 @@ class _MainPageState extends State<MainPage> {
                 )
               ],
               onChanged: (value) => setState(() {}),
+              decoration: InputDecoration(
+                  hintText: 'Pleace your username here',
+                  hintStyle: TextStyle(
+                      color: Colors.red.shade300,
+                      fontWeight: FontWeight.normal),
+                  // labelText: 'Username',
+                  labelStyle: TextStyle(
+                      color: Colors.red.shade600, fontWeight: FontWeight.bold),
+                  floatingLabelAlignment: FloatingLabelAlignment.center,
+                  floatingLabelBehavior: FloatingLabelBehavior.auto,
+                  label: Container(
+                    padding: const EdgeInsets.all(3),
+                    color: Colors.red.shade100,
+                    child: Text(
+                      'Input Text',
+                      style: TextStyle(
+                          color: Colors.red.shade900,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  helperText: 'This is a helper text ',
+                  // helperMaxLines: 2,
+                  helperStyle: const TextStyle(
+                      color: Colors.grey, fontWeight: FontWeight.bold),
+                  counterText: '${textEditingController.text.length}',
+                  counterStyle: TextStyle(color: Colors.red.shade900),
+                  counter: Container(
+                    padding: const EdgeInsets.all(3),
+                    color: Colors.red.shade900,
+                    child: Text(
+                      '${textEditingController.text.length}',
+                      style: const TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  // errorText: 'This is an error',
+                  errorStyle: const TextStyle(
+                      color: Color.fromARGB(255, 213, 112, 146),
+                      fontWeight: FontWeight.bold),
+                  error: Container(
+                    padding: const EdgeInsets.all(3),
+                    color: Colors.grey.shade300,
+                    child: const Text(
+                      'This is an error',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  )),
             ),
             const SizedBox(
               height: 20,
             ),
+            const TextField(),
             Text(
               textEditingController.text,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
